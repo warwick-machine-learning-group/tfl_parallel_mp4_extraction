@@ -1,0 +1,33 @@
+#ifndef _
+#define _
+/*****************************************************************************
+ * Filename		: 
+ * Author		: Edward Chuah
+ * Organisation	: The University of Warwick, UK.
+ * Date Created	: 
+ * Description	: 
+ *
+ * Version				: See release notes.
+ * Owner				: To be included.
+ * Copyright(c) 2020	: To be included.
+ *
+ * Change Log:
+ * Date			Author				Change Description
+ * ====         ======				==================
+ *
+ ****************************************************************************/
+
+#endif
+
+	/**
+	 * Method name		:
+	 * Description		:
+	 * Parameter list	:
+	 * Return value		:
+	 */
+
+/***********************************
+    ***** PRIVATE METHODS *****
+ ***********************************/
+ 
+#endif // __H_
