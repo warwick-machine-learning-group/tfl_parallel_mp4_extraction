@@ -106,7 +106,8 @@ IntT VideoData::get_frame_width() const
 } // end get_frame_width()
 
 
-BoolT VideoData::get_frame( const IntT &index, MatT &frame )
+BoolT VideoData::get_frame( const IntT &index,
+							MatT &frame )
 {
 	if( index >= m_Frame_List.size() )
 	{

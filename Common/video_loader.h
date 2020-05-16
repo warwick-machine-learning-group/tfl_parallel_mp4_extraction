@@ -30,38 +30,70 @@ public:
 	/**
 	 * Method name		: run_on_1_processor
 	 * Description		: Execute video data extraction on 1 processor
-	 * Parameter list	: StringT, StringT
+	 * Parameter list	: StringT, StringT, BoolT
 	 * Return value		: void
 	 */
 	void run_on_1_processor( const CommonDataDefs::StringT &source_dir,
-	 			 	 	 	 const CommonDataDefs::StringT &destination_dir );
+	 			 	 	 	 const CommonDataDefs::StringT &destination_dir,
+							 CommonDataDefs::BoolT write_to_file = false );
 
 	/**
 	 * Method name		: run_on_4_processors
 	 * Description		: Execute video data extraction on 4 processors
-	 * Parameter list	: StringT, StringT
+	 * Parameter list	: StringT, StringT, BoolT
 	 * Return value		: void
 	 */
 	void run_on_4_processors( const CommonDataDefs::StringT &source_dir,
-							  const CommonDataDefs::StringT &destination_dir );
+							  const CommonDataDefs::StringT &destination_dir,
+							  CommonDataDefs::BoolT write_to_file = false );
 
 	/**
 	 * Method name		: run_on_8_processors
 	 * Description		: Execute video data extraction on 8 processors
-	 * Parameter list	: StringT, StringT
+	 * Parameter list	: StringT, StringT, BoolT
 	 * Return value		: void
 	 */
 	void run_on_8_processors( const CommonDataDefs::StringT &source_dir,
-							  const CommonDataDefs::StringT &destination_dir );
+							  const CommonDataDefs::StringT &destination_dir,
+							  CommonDataDefs::BoolT write_to_file = false );
 
 	/**
 	 * Method name		: run_on_16_processors
 	 * Description		: Execute video data extraction on 16 processors
-	 * Parameter list	: StringT, StringT
+	 * Parameter list	: StringT, StringT, BoolT
 	 * Return value		: void
 	 */
 	void run_on_16_processors( const CommonDataDefs::StringT &source_dir,
-							   const CommonDataDefs::StringT &destination_dir );
+							   const CommonDataDefs::StringT &destination_dir,
+							   CommonDataDefs::BoolT write_to_file = false );
+
+	/**
+	 * Method name		: get_video_count
+	 * Description		:
+	 * Parameter list	: void
+	 * Return value		: IntT
+	 */
+	CommonDataDefs::IntT get_video_count() const;
+
+	/**
+	 * Method name		: get_video_properties
+	 * Description		:
+	 * Parameter list	: IntT, IntT, IntT, IntT
+	 * Return value		: void
+	 */
+	void get_video_properties( const CommonDataDefs::IntT &index,
+							   CommonDataDefs::IntT &frame_count,
+							   CommonDataDefs::IntT &frame_height,
+							   CommonDataDefs::IntT &frame_width );
+
+	/**
+	 * Method name		: get_videos_frames
+	 * Description		:
+	 * Parameter list	: IntVectorT, UCharT
+	 * Return value		: void
+	 */
+	void get_videos_frames( CommonDataDefs::IntVectorT &videos_frames_count_list,
+						    CommonDataDefs::UCharT *&videos_frames_data );
 
 
 private:
@@ -82,7 +114,7 @@ private:
 	void load_video_data( const CommonDataDefs::StringVectorT &files_list,
 					      const CommonDataDefs::StringT &destination_dir,
 						  const CommonDataDefs::IntT &processor_id,
-						  CommonDataDefs::BoolT write_data = false );
+						  const CommonDataDefs::BoolT &write_data );
 
 	/**
 	 * Method name		: extract_video_frames
@@ -113,8 +145,28 @@ private:
 								  CommonDataDefs::StringVectorT &files_list,
 								  CommonDataDefs::StringT &destination_dir );
 
+	/**
+	 * Method name		: return_extracted_video_data_to_processor_0
+	 * Description		:
+	 * Parameter list	: IntT
+	 * Return value		: void
+	 */
+	void return_extracted_video_data_to_processor_0( const CommonDataDefs::IntT &processor_id );
+
+	/**
+	 * Method name		: processor_0_receives_extracted_video_data
+	 * Description		:
+	 * Parameter list	: IntT
+	 * Return value		: void
+	 */
+	void processor_0_receives_extracted_video_data( const CommonDataDefs::IntT &number_of_processors );
+
 private:
-	CommonDataDefs::StringVectorT	m_Files_List;
+	CommonDataDefs::StringVectorT		m_Files_List;
+	CommonDataDefs::VideoDataVectorT 	m_Video_Data_List;
+	CommonDataDefs::UCharVectorT		m_Flattened_Video_Data_List;
+	CommonDataDefs::IntVectorT			m_Videos_Frames_Count_List;
+	CommonDataDefs::IntT				m_Total_Frames_Elements;
 
 }; // end class VideoLoader
 
@@ -154,9 +206,9 @@ extern "C" {
 	 * Parameter list	: VideoLoader, CharT, CharT
 	 * Return value		: void
 	 */
-	void vidl_run_on_1_processor( VideoLoader *vidl,
-								  const CommonDataDefs::CharT *in_dir,
-								  const CommonDataDefs::CharT *out_dir )
+	 void vidl_run_on_1_processor( VideoLoader *vidl,
+				  	  	  	  	   const CommonDataDefs::CharT *in_dir,
+								   const CommonDataDefs::CharT *out_dir )
 	{
 		CommonDataDefs::StringT temp_in_dir( in_dir );
 		CommonDataDefs::StringT temp_out_dir( out_dir );
@@ -177,5 +229,27 @@ extern "C" {
 		CommonDataDefs::StringT temp_out_dir( out_dir );
 		vidl->run_on_4_processors( temp_in_dir, temp_out_dir );
 	} // end vidl_run_on_4_processors()
+
+	void vidl_get_video_count( VideoLoader *vidl,
+							   CommonDataDefs::IntT &video_count )
+	{
+		video_count = static_cast< CommonDataDefs::IntT > ( vidl->get_video_count() );
+	} // end vidl_get_video_count()
+
+	void vidl_get_video_properties( VideoLoader *vidl,
+									const CommonDataDefs::IntT video_index,
+									CommonDataDefs::IntT &frame_count,
+									CommonDataDefs::IntT &frame_height,
+									CommonDataDefs::IntT &frame_width )
+	{
+		vidl->get_video_properties( video_index, frame_count, frame_height, frame_width );
+	} // end vidl_get_video_properties()
+
+	void vidl_get_video_frame( VideoLoader *vidl,
+							   CommonDataDefs::IntVectorT &videos_frames_count_list,
+							   CommonDataDefs::UCharT *&videos_frames_data )
+	{
+		vidl->get_videos_frames( videos_frames_count_list, videos_frames_data );
+	} // end vidl_get_video_frame()
 }
 // end C interface wrapper

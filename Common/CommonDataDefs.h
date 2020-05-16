@@ -50,6 +50,7 @@ namespace CommonDataDefs
 	typedef std::vector< char >					CharVectorT;
 	typedef std::vector< StringT >				StringVectorT;
 	typedef std::vector< MatT >					MatVectorT;
+	typedef std::vector< UCharT >				UCharVectorT;
 
 	typedef std::vector< StringVectorT >		VectorOfStringVectorT;
 	typedef std::vector< IntVectorT >			VectorOfIntVectorT;
@@ -57,7 +58,8 @@ namespace CommonDataDefs
 	typedef std::vector< ULLVectorT >			VectorOfULLVectorT;
 	typedef std::vector< FloatVectorT >			VectorOfFloatVectorT;
 	typedef std::vector< DoubleVectorT >		VectorOfDoubleVectorT;
-	typedef std::vector<VideoDataT>				VideoDataVectorT;
+	typedef std::vector< VideoDataT >			VideoDataVectorT;
+	typedef std::vector< UCharVectorT >			VectorOfUCharVectorT;
 
 }; // end namespace CommonDataDefs.
 

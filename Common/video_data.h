@@ -102,7 +102,7 @@ public:
 	/**
 	 * Method name		: get_frame
 	 * Description		: Get a video frame
-	 * Parameter list	: IntT, MatT
+	 * Parameter list	: IntT, PyObject
 	 * Return value		: BoolT
 	 */
 	CommonDataDefs::BoolT get_frame( const CommonDataDefs::IntT &index,
