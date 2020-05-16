@@ -23,7 +23,7 @@ mpirun -np 16 python run_16_parallel_video_extraction.py -i `<`input directory`>
   
 ### Notes on usage
 1. If you want to save the frames into a local filesystem directory, provide an output directory.  When an output directory is provided, the frames will only be written to the filesystem and not loaded into memory.
-2.  Work-in-progress (Expected completion 21 May 2020): If you want to load the frames into memory, provide "" as the output directory.  This will notify the program that all the frames are to be loaded into memory.
+2.  Work-in-progress (Expected completion 21 May 2020): If you want to load the frames into memory, provide "" as the output directory.  This will notify the program that all the frames are to be loaded into memory. The frames will not be saved to disk.
 
 ## Dependencies
 Please ensure that you have the following libraries installed on your machine before running the program or using the library:  
