@@ -27,7 +27,7 @@ IntT main( IntT argc, CharT *argv[] )
 	if( argc == 1 )
 	{
 		cout << "Video data loader\n"
-				"1. To execute on a single process, specify -single "
+				"1. To execute on a single processor, specify tflvidext -single "
 				"[video_source_directory] [video_destination_directory]\n"
 				"2. To execute on multiple processors, specify mpirun -np "
 				"[number_of_processors] tflta -multiple [video_source_directory]"
