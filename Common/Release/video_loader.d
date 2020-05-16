@@ -26,7 +26,8 @@ video_loader.o: ../video_loader.cpp ../video_loader.h ../CommonDataDefs.h \
  /usr/local/include/opencv4/opencv2/core/utility.hpp \
  /usr/local/include/opencv4/opencv2/core/optim.hpp \
  /usr/local/include/opencv4/opencv2/core/ovx.hpp \
- /usr/local/include/opencv4/opencv2/core/cvdef.h
+ /usr/local/include/opencv4/opencv2/core/cvdef.h \
+ /usr/local/include/opencv4/opencv2/imgcodecs.hpp
 
 ../video_loader.h:
 
@@ -89,3 +90,5 @@ video_loader.o: ../video_loader.cpp ../video_loader.h ../CommonDataDefs.h \
 /usr/local/include/opencv4/opencv2/core/ovx.hpp:
 
 /usr/local/include/opencv4/opencv2/core/cvdef.h:
+
+/usr/local/include/opencv4/opencv2/imgcodecs.hpp:
