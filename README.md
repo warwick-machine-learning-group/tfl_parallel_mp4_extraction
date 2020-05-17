@@ -10,7 +10,7 @@ Currently, three Python scripts are provided for extracting all the frames in mu
 The Python scripts are available in the folder `TestStub`.  A Linux shell executable is also provided in `TestStub/Release`.   
 Tests output are available in the folder `Test_Output`.  
 
-The video frames can be saved into a local filesystem directory or loaded into memory, for example: Python's data structures, C / C++ data structures.
+The video frames can be saved into a local filesystem directory.  The video frames can also be loaded into memory, for example: Python's data structures, C / C++ data structures.
 
 ## Usage
 To execute on 4 processor cores:  
