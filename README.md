@@ -1,6 +1,6 @@
 # A Parallel Video Extraction library
 
-This objective of this project is to develop a parallel video extraction library and integrate it into Python. A goal of the project is to obtain a speedup when extracting videos frames. The library currently uses the Message Passing Interface (MPI) for parallel computing. Different from multi-threaded processes which can be executed on a single physical processor core or on cell-based processors that are found on graphics cards, the library uses multiple physical processor cores.
+This objective of this project is to develop a parallel video extraction library and integrate it into Python. A goal of the project is to obtain a speedup when extracting videos frames. The library uses the Message Passing Interface (MPI) for parallel computing. Different from multi-threaded processes which can be executed on a single physical processor core or on cell-based processors that are found on graphics cards, the library uses multiple physical processor cores.
 
 Currently, we have provided three Python scripts to extract all the frames in multiple videos using 4, 8 and 16 processor cores:  
 1. `run_4_parallel_video_extraction.py`
