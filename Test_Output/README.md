@@ -11,5 +11,5 @@ Ubuntu 16.04 LTS.
 
 #### run_4_parallel_video_extraction.py   
 Number of videos: 52   
-Video properties: 352 x 288   
+Resolution: 352 x 288   
 ![run_4_test_output](https://github.com/warwick-machine-learning-group/tfl_parallel_mp4_extraction/blob/master/Test_Output/test_result_run_on_4_cores.png)
