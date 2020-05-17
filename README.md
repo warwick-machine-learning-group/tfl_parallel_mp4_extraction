@@ -7,7 +7,8 @@ Currently, three Python scripts are provided for extracting all the frames in mu
 2. `run_8_parallel_video_extraction.py`
 3. `run_16_parallel_video_extraction.py`
 
-The Python scripts are available in the folder `TestStub`.  A Linux shell executable is also provided in `TestStub/Release`.
+The Python scripts are available in the folder `TestStub`.  A Linux shell executable is also provided in `TestStub/Release`.   
+Tests output are available in the folder `Test_Output`.  
 
 The video frames can be saved into a local filesystem directory or loaded into memory, for example: Python's numpy arrays, C / C++ arrays.
 
