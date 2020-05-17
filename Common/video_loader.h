@@ -89,19 +89,21 @@ public:
 	/**
 	 * Method name		: get_videos_frames
 	 * Description		:
-	 * Parameter list	: IntVectorT, UCharT
+	 * Parameter list	: IntT, IntT, IntT, UCharT
 	 * Return value		: void
 	 */
-	void get_videos_frames( CommonDataDefs::IntVectorT &videos_frames_count_list,
+	void get_videos_frames( CommonDataDefs::IntT &number_of_videos,
+							CommonDataDefs::IntT *&videos_frames_count_list,
+							CommonDataDefs::IntT &number_of_frames_elements,
 						    CommonDataDefs::UCharT *&videos_frames_data );
 
 	/**
 	 * Method name		: flatten_video_data
 	 * Description		:
-	 * Parameter list	: void
+	 * Parameter list	: IntT
 	 * Return value		: void
 	 */
-	void flatten_video_data();
+	void flatten_video_data( const CommonDataDefs::IntT &processor_id );
 
 
 private:
@@ -238,26 +240,43 @@ extern "C" {
 		vidl->run_on_4_processors( temp_in_dir, temp_out_dir );
 	} // end vidl_run_on_4_processors()
 
-	void vidl_get_video_count( VideoLoader *vidl,
-							   CommonDataDefs::IntT &video_count )
+	/**
+	 * Method name		: vidl_run_on_8_processors
+	 * Description		: Call VideoLoader class member function run_on_8_processors
+	 * Parameter list	: VideoLoader, CharT, CharT
+	 * Return value		: void
+	 */
+	void vidl_run_on_8_processors( VideoLoader *vidl,
+								   const CommonDataDefs::CharT *in_dir,
+								   const CommonDataDefs::CharT *out_dir )
 	{
-		video_count = static_cast< CommonDataDefs::IntT > ( vidl->get_video_count() );
-	} // end vidl_get_video_count()
+		CommonDataDefs::StringT temp_in_dir( in_dir );
+		CommonDataDefs::StringT temp_out_dir( out_dir );
+		vidl->run_on_8_processors( temp_in_dir, temp_out_dir );
+	} // end vidl_run_on_8_processors()
 
-	void vidl_get_video_properties( VideoLoader *vidl,
-									const CommonDataDefs::IntT video_index,
-									CommonDataDefs::IntT &frame_count,
-									CommonDataDefs::IntT &frame_height,
-									CommonDataDefs::IntT &frame_width )
+	/**
+	 * Method name		: vidl_run_on_16_processors
+	 * Description		: Call VideoLoader class member function run_on_16_processors
+	 * Parameter list	: VideoLoader, CharT, CharT
+	 * Return value		: void
+	 */
+	void vidl_run_on_16_processors( VideoLoader *vidl,
+									const CommonDataDefs::CharT *in_dir,
+									const CommonDataDefs::CharT *out_dir )
 	{
-		vidl->get_video_properties( video_index, frame_count, frame_height, frame_width );
-	} // end vidl_get_video_properties()
+		CommonDataDefs::StringT temp_in_dir( in_dir );
+		CommonDataDefs::StringT temp_out_dir( out_dir );
+		vidl->run_on_16_processors( temp_in_dir, temp_out_dir );
+	} // end vidl_run_on_16_processors()
 
-	void vidl_get_video_frame( VideoLoader *vidl,
-							   CommonDataDefs::IntVectorT &videos_frames_count_list,
-							   CommonDataDefs::UCharT *&videos_frames_data )
+	void vidl_get_all_videos_frames( VideoLoader *vidl,
+									 CommonDataDefs::IntT &number_of_videos,
+									 CommonDataDefs::IntT *&videos_frames_count_list,
+									 CommonDataDefs::IntT &number_of_frames_elements,
+									 CommonDataDefs::UCharT *&videos_frames_data )
 	{
-		vidl->get_videos_frames( videos_frames_count_list, videos_frames_data );
+		vidl->get_videos_frames( number_of_videos, videos_frames_count_list, number_of_frames_elements, videos_frames_data );
 	} // end vidl_get_video_frame()
 }
 // end C interface wrapper

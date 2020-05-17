@@ -51,7 +51,7 @@ void VideoLoader::run_on_1_processor( const StringT &source_dir,
 	{
 		return;
 	}
-	flatten_video_data();
+	flatten_video_data( processor_id );
 } // end run_on_1_processor()
 
 
@@ -85,8 +85,7 @@ void VideoLoader::run_on_4_processors( const StringT &source_dir,
 			return;
 		}
 
-		processor_0_receives_extracted_video_data( number_processors );
-		flatten_video_data();
+		flatten_video_data( processor_id );
 	}
 
 	if( processor_id == 1 )
@@ -100,7 +99,8 @@ void VideoLoader::run_on_4_processors( const StringT &source_dir,
 		{
 			return;
 		}
-		return_extracted_video_data_to_processor_0( processor_id );
+
+		flatten_video_data( processor_id );
 	}
 
 	if( processor_id == 2 )
@@ -114,7 +114,8 @@ void VideoLoader::run_on_4_processors( const StringT &source_dir,
 		{
 			return;
 		}
-		return_extracted_video_data_to_processor_0( processor_id );
+
+		flatten_video_data( processor_id );
 	}
 
 	if( processor_id == 3 )
@@ -128,7 +129,8 @@ void VideoLoader::run_on_4_processors( const StringT &source_dir,
 		{
 			return;
 		}
-		return_extracted_video_data_to_processor_0( processor_id );
+
+		flatten_video_data( processor_id );
 	}
 
 	MPI_Finalize();
@@ -164,8 +166,8 @@ void VideoLoader::run_on_8_processors( const StringT &source_dir,
 		{
 			return;
 		}
-		processor_0_receives_extracted_video_data( number_processors );
-		flatten_video_data();
+
+		flatten_video_data( processor_id );
 	}
 
 	if( processor_id == 1 )
@@ -179,7 +181,7 @@ void VideoLoader::run_on_8_processors( const StringT &source_dir,
 		{
 			return;
 		}
-		return_extracted_video_data_to_processor_0( processor_id );
+		flatten_video_data( processor_id );
 	}
 
 	if( processor_id == 2 )
@@ -193,7 +195,7 @@ void VideoLoader::run_on_8_processors( const StringT &source_dir,
 		{
 			return;
 		}
-		return_extracted_video_data_to_processor_0( processor_id );
+		flatten_video_data( processor_id );
 	}
 
 	if( processor_id == 3 )
@@ -207,7 +209,7 @@ void VideoLoader::run_on_8_processors( const StringT &source_dir,
 		{
 			return;
 		}
-		return_extracted_video_data_to_processor_0( processor_id );
+		flatten_video_data( processor_id );
 	}
 
 	if( processor_id == 4 )
@@ -221,7 +223,7 @@ void VideoLoader::run_on_8_processors( const StringT &source_dir,
 		{
 			return;
 		}
-		return_extracted_video_data_to_processor_0( processor_id );
+		flatten_video_data( processor_id );
 	}
 
 	if( processor_id == 5 )
@@ -235,7 +237,7 @@ void VideoLoader::run_on_8_processors( const StringT &source_dir,
 		{
 			return;
 		}
-		return_extracted_video_data_to_processor_0( processor_id );
+		flatten_video_data( processor_id );
 	}
 
 	if( processor_id == 6 )
@@ -249,7 +251,7 @@ void VideoLoader::run_on_8_processors( const StringT &source_dir,
 		{
 			return;
 		}
-		return_extracted_video_data_to_processor_0( processor_id );
+		flatten_video_data( processor_id );
 	}
 
 	if( processor_id == 7 )
@@ -263,7 +265,7 @@ void VideoLoader::run_on_8_processors( const StringT &source_dir,
 		{
 			return;
 		}
-		return_extracted_video_data_to_processor_0( processor_id );
+		flatten_video_data( processor_id );
 	}
 
 	MPI_Finalize();
@@ -299,8 +301,7 @@ void VideoLoader::run_on_16_processors( const StringT &source_dir,
 		{
 			return;
 		}
-		processor_0_receives_extracted_video_data( number_processors );
-		flatten_video_data();
+		flatten_video_data( processor_id );
 	}
 
 	if( processor_id == 1 )
@@ -314,7 +315,7 @@ void VideoLoader::run_on_16_processors( const StringT &source_dir,
 		{
 			return;
 		}
-		return_extracted_video_data_to_processor_0( processor_id );
+		flatten_video_data( processor_id );
 	}
 
 	if( processor_id == 2 )
@@ -328,7 +329,7 @@ void VideoLoader::run_on_16_processors( const StringT &source_dir,
 		{
 			return;
 		}
-		return_extracted_video_data_to_processor_0( processor_id );
+		flatten_video_data( processor_id );
 	}
 
 	if( processor_id == 3 )
@@ -342,7 +343,7 @@ void VideoLoader::run_on_16_processors( const StringT &source_dir,
 		{
 			return;
 		}
-		return_extracted_video_data_to_processor_0( processor_id );
+		flatten_video_data( processor_id );
 	}
 
 	if( processor_id == 4 )
@@ -356,7 +357,7 @@ void VideoLoader::run_on_16_processors( const StringT &source_dir,
 		{
 			return;
 		}
-		return_extracted_video_data_to_processor_0( processor_id );
+		flatten_video_data( processor_id );
 	}
 
 	if( processor_id == 5 )
@@ -370,7 +371,7 @@ void VideoLoader::run_on_16_processors( const StringT &source_dir,
 		{
 			return;
 		}
-		return_extracted_video_data_to_processor_0( processor_id );
+		flatten_video_data( processor_id );
 	}
 
 	if( processor_id == 6 )
@@ -384,7 +385,7 @@ void VideoLoader::run_on_16_processors( const StringT &source_dir,
 		{
 			return;
 		}
-		return_extracted_video_data_to_processor_0( processor_id );
+		flatten_video_data( processor_id );
 	}
 
 	if( processor_id == 7 )
@@ -398,7 +399,7 @@ void VideoLoader::run_on_16_processors( const StringT &source_dir,
 		{
 			return;
 		}
-		return_extracted_video_data_to_processor_0( processor_id );
+		flatten_video_data( processor_id );
 	}
 
 	if( processor_id == 8 )
@@ -412,7 +413,7 @@ void VideoLoader::run_on_16_processors( const StringT &source_dir,
 		{
 			return;
 		}
-		return_extracted_video_data_to_processor_0( processor_id );
+		flatten_video_data( processor_id );
 	}
 
 	if( processor_id == 9 )
@@ -426,7 +427,7 @@ void VideoLoader::run_on_16_processors( const StringT &source_dir,
 		{
 			return;
 		}
-		return_extracted_video_data_to_processor_0( processor_id );
+		flatten_video_data( processor_id );
 	}
 
 	if( processor_id == 10 )
@@ -440,7 +441,7 @@ void VideoLoader::run_on_16_processors( const StringT &source_dir,
 		{
 			return;
 		}
-		return_extracted_video_data_to_processor_0( processor_id );
+		flatten_video_data( processor_id );
 	}
 
 	if( processor_id == 11 )
@@ -454,7 +455,7 @@ void VideoLoader::run_on_16_processors( const StringT &source_dir,
 		{
 			return;
 		}
-		return_extracted_video_data_to_processor_0( processor_id );
+		flatten_video_data( processor_id );
 	}
 
 	if( processor_id == 12 )
@@ -468,7 +469,7 @@ void VideoLoader::run_on_16_processors( const StringT &source_dir,
 		{
 			return;
 		}
-		return_extracted_video_data_to_processor_0( processor_id );
+		flatten_video_data( processor_id );
 	}
 
 	if( processor_id == 13 )
@@ -482,7 +483,7 @@ void VideoLoader::run_on_16_processors( const StringT &source_dir,
 		{
 			return;
 		}
-		return_extracted_video_data_to_processor_0( processor_id );
+		flatten_video_data( processor_id );
 	}
 
 	if( processor_id == 14 )
@@ -496,7 +497,7 @@ void VideoLoader::run_on_16_processors( const StringT &source_dir,
 		{
 			return;
 		}
-		return_extracted_video_data_to_processor_0( processor_id );
+		flatten_video_data( processor_id );
 	}
 
 	if( processor_id == 15 )
@@ -510,7 +511,7 @@ void VideoLoader::run_on_16_processors( const StringT &source_dir,
 		{
 			return;
 		}
-		return_extracted_video_data_to_processor_0( processor_id );
+		flatten_video_data( processor_id );
 	}
 
 	MPI_Finalize();
@@ -540,18 +541,16 @@ void VideoLoader::get_video_properties( const IntT &index,
 } // end get_video_properties()
 
 
-void VideoLoader::get_videos_frames( IntVectorT &videos_frames_count_list,
+void VideoLoader::get_videos_frames( IntT &number_of_videos,
+									 IntT *&videos_frames_count_list,
+									 IntT &number_of_frames_elements,
 								     UCharT *&videos_frames_data )
 {
-	videos_frames_count_list = m_Videos_Frames_Count_List;
-	/*cout << "Flat frame total elements " << flat_frame.total() << "\n";
-	UCharT *ptr = new CommonDataDefs::UCharT[ flat_frame.total() ];
-	memcpy( ptr, flat_frame.data, flat_frame.total() );
-	Mat f_v = Mat( frame.rows, frame.cols, frame.type(), ptr );
-	imwrite("c_lib_img_recon.jpg", f_v);
-	delete [] ptr;
-	ptr = NULL;*/
+	number_of_videos = m_Videos_Frames_Count_List.size();
+	videos_frames_count_list = new CommonDataDefs::IntT[ m_Videos_Frames_Count_List.size() ];
+	memcpy( videos_frames_count_list, m_Videos_Frames_Count_List.data(), m_Videos_Frames_Count_List.size() * sizeof( IntT ) );
 
+	number_of_frames_elements = m_Total_Frames_Elements;
 	videos_frames_data = new CommonDataDefs::UCharT[ m_Total_Frames_Elements ];
 	memcpy( videos_frames_data, m_Flattened_Video_Data_List.data(), m_Total_Frames_Elements );
 	m_Flattened_Video_Data_List.erase( m_Flattened_Video_Data_List.begin(), m_Flattened_Video_Data_List.end() );
@@ -756,7 +755,7 @@ void VideoLoader::processor_0_receives_extracted_video_data( const IntT &number_
 } // end processor_0_receives_extracted_video_data()
 
 
-void VideoLoader::flatten_video_data()
+void VideoLoader::flatten_video_data( const IntT &processor_id )
 {
 	for( IntT i=0; i<m_Video_Data_List.size(); ++i )
 	{
@@ -781,5 +780,5 @@ void VideoLoader::flatten_video_data()
 		}
 		m_Video_Data_List.at( i ).delete_frame_list();
 	}
-	cout << "From C++ library: Total number of frames extracted: " << m_Flattened_Video_Data_List.size() << " frames.\n";
+	cout << "From C++ library, Processor ID " << processor_id << ": Total number of frames elements extracted: " << m_Flattened_Video_Data_List.size() << "\n";
 } // end flatten_video_data()
