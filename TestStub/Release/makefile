@@ -37,19 +37,19 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: tflvidext
+all: vidext
 
 # Tool invocations
-tflvidext: $(OBJS) $(USER_OBJS)
+vidext: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C++ Linker'
-	g++ -L/home/ed/mpiapps/mp4_parallel_extraction/Common/Release -o "tflvidext" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ -L/home/ed/mpiapps/mp4_parallel_extraction/Common/Release -o "vidext" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(CC_DEPS)$(C++_DEPS)$(EXECUTABLES)$(C_UPPER_DEPS)$(CXX_DEPS)$(OBJS)$(CPP_DEPS)$(C_DEPS) tflvidext
+	-$(RM) $(CC_DEPS)$(C++_DEPS)$(EXECUTABLES)$(C_UPPER_DEPS)$(CXX_DEPS)$(OBJS)$(CPP_DEPS)$(C_DEPS) vidext
 	-@echo ' '
 
 .PHONY: all clean dependents
