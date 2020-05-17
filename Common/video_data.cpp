@@ -147,3 +147,9 @@ BoolT VideoData::write_data_to_local( const StringT &dir_path )
 
 	return true;
 } // end write_data_to_local()
+
+
+void VideoData::delete_frame_list()
+{
+	m_Frame_List.erase( m_Frame_List.begin(), m_Frame_List.end() );
+} // end delete_frame_list(0

@@ -95,6 +95,14 @@ public:
 	void get_videos_frames( CommonDataDefs::IntVectorT &videos_frames_count_list,
 						    CommonDataDefs::UCharT *&videos_frames_data );
 
+	/**
+	 * Method name		: flatten_video_data
+	 * Description		:
+	 * Parameter list	: void
+	 * Return value		: void
+	 */
+	void flatten_video_data();
+
 
 private:
 	/**

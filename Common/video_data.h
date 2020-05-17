@@ -116,6 +116,14 @@ public:
 	 */
 	CommonDataDefs::BoolT write_data_to_local( const CommonDataDefs::StringT &dir_path );
 
+	/**
+	 * Method name		: delete_frame_list
+	 * Description		: Delete all frames
+	 * Parameter list	: void
+	 * Return value		: void
+	 */
+	void delete_frame_list();
+
 
 private:
 	CommonDataDefs::StringT		m_File_Name;
