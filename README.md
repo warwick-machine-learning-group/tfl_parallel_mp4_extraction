@@ -27,7 +27,7 @@ To execute on 16 processor cores:
 2. Load into memory: If you want to load the frames into memory only, provide `-o ""` as the output directory. This will notify the program that all the frames are to be loaded into memory. The frames will not be saved to disk.
 
 ## Dependencies
-Please ensure that you have the following libraries installed on your machine before running the program or using the library:  
+The following libraries must be installed on your machine:  
 1. Boost C++ version 1.73.  https://www.boost.org/users/history/version_1_73_0.html. The video extraction library uses Boost::filesystem.
 2. OpenCV 4.3. https://opencv.org/releases/ 
 3. OpenMPI 4.0.3. https://www.open-mpi.org/software/ompi/v4.0/ 
