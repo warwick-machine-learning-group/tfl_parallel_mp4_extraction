@@ -21,6 +21,13 @@ class VidLdr(object):
     b_in_dir = in_dir.encode('utf-8')
     b_out_dir = out_dir.encode('utf-8')
     lib.vidl_run_on_16_processors(self.obj, create_string_buffer(b_in_dir), create_string_buffer(b_out_dir))
+    number_videos = c_int()
+    number_frames_elements = c_int()
+    all_videos_frame_count = POINTER(c_int)()
+    all_videos_frame_data = POINTER(c_int)()
+    lib.vidl_get_all_videos_frames(self.obj, byref(number_videos), byref(all_videos_frame_count), byref(number_frames_elements), byref(all_videos_frame_data))
+    print('From Python, received total number of videos', number_videos.value)
+    print('From Python, received total number of frames elements', number_frames_elements.value)
 
   def delete(self):
     lib.vidl_delete(self.obj)
