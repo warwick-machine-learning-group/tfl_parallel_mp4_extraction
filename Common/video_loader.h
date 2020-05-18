@@ -7,9 +7,7 @@
  * Date Created	: 7 May 2020
  * Description	: Video loader class.
  *
- * Version				: See release notes.
- * Owner				: To be included.
- * Copyright(c) 2020	: To be included.
+ * Copyright(c)	: GPL 3.0 (https://www.gnu.org/licenses/gpl-3.0.en.html)
  *
  * Change Log:
  * Date			Author				Change Description
@@ -201,13 +199,17 @@ extern "C" {
 	/**
 	 * Method name		: vidl_delete
 	 * Description		: Destructor
-	 * Parameter list	: VideoLoader
+	 * Parameter list	: VideoLoader, IntT, IntT
 	 * Return value		: void
 	 */
-	void vidl_delete( VideoLoader *vidl )
+	void vidl_delete( VideoLoader *vidl,
+					  CommonDataDefs::IntT *pointer_videos_frames_count_list,
+					  CommonDataDefs::UCharT *pointer_videos_frames_data )
 	{
 		delete vidl;
 		vidl = NULL;
+		delete [] pointer_videos_frames_count_list;
+		delete [] pointer_videos_frames_data;
 	} // end vidl_delete()
 
 	/**
