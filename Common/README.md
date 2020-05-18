@@ -13,7 +13,7 @@ lib = cdll.LoadLibrary('../Common/Release/libCommon.so')
 def __init__(self):  
     self.obj = lib.vidl_new()  '''initialise an instance of the library.'''
 
-'''Step 1: '''
+'''Step 1: Execute the process.'''
 lib.vidl_run_on_4_processors(self.obj, create_string_buffer(b_in_dir), create_string_buffer(b_out_dir))  
 
 '''Step 2: Allocate storage for return arrays.'''
