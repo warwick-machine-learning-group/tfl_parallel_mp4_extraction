@@ -1,4 +1,4 @@
-## Library containing routines that currently can be called in Python and C/C++.
+## Library containing routines that currently can be called in Python and C/C++
 
 This folder contains the C++ header and source files, a shared library and object files for the parallel video extraction library. Examples of code snippets for calling the routines in the library are provided below.
 
