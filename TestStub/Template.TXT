@@ -7,9 +7,7 @@
  * Date Created	: 
  * Description	: 
  *
- * Version				: See release notes.
- * Owner				: To be included.
- * Copyright(c) 2020	: To be included.
+ * Copyright(c)	: 
  *
  * Change Log:
  * Date			Author				Change Description

@@ -5,9 +5,7 @@
  * Date Created	: 1 May 2020
  * Description	: Test stub for loading videos.
  *
- * Version				: See release notes.
- * Owner				: To be included.
- * Copyright(c) 2020	: To be included.
+ * Copyright(c)	: GPL 3.0 (https://www.gnu.org/licenses/gpl-3.0.en.html)
  *
  * Change Log:
  * Date			Author				Change Description
