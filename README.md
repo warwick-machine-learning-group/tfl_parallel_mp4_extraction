@@ -23,7 +23,7 @@ To execute on 16 CPUs:
 `mpirun -np 16 python run_16_parallel_video_extraction.py -i <input directory> -o <output directory>`  
 
 ## Usage : C++ executable
-`mpirun -np <number of processors> vidext -multiple <number of processors>`<input directory> <output directory>`  
+`mpirun -np <number of processors> vidext -multiple <number of processors> <input directory> <output directory>`  
   
 ### Notes on usage
 1. Save to disk: If you want to save the frames into a local filesystem directory, provide an output directory.  When an output directory is provided, the frames will only be written to the filesystem and not loaded  exinto memory.  
