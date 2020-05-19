@@ -56,7 +56,7 @@ IntT main( IntT argc, CharT *argv[] )
   // Step 3: Execute the process.
   video_loader.run_on_4_processors( arguments.at( 2 ), arguments.at( 3 ) ); // input directory, output directory.
   
-  // Step 4: Get the data
+  // Step 4: Get the data.
   video_loader.get_videos_frames( videos_frames_count_list, videos_frames_data );
   
   return 0;
