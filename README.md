@@ -26,7 +26,7 @@ To execute on 16 CPUs:
 `mpirun -np <number of processors> vidext -multiple <number of processors> <input directory> <output directory>`  
   
 ### Notes on usage
-1. Save to disk: If you want to save the frames into a local filesystem directory, provide an output directory.  When an output directory is provided, the frames will only be written to the filesystem and not loaded  exinto memory.  
+1. Save to disk: If you want to save the frames into a local filesystem directory, provide an output directory.  When an output directory is provided, the frames will only be written to the filesystem and not loaded into memory.  
 2. Load into memory: If you want to load the frames into memory only, provide `-o ""` as the output directory. This will notify the program that all the frames are to be loaded into memory. The frames will not be saved to disk.  
 
 ## Dependencies
