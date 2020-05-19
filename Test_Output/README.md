@@ -9,7 +9,7 @@ GeForce GTX 1050.
 ### Operating system:  
 Ubuntu 16.04 LTS.
 
-### Test
+### Test:
 Number of videos: 52   
 Resolution: 352 x 288   
 
