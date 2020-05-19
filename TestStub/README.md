@@ -19,8 +19,8 @@ lib.vidl_run_on_4_processors(self.obj, create_string_buffer(b_in_dir), create_st
 '''Step 2: Allocate storage for return arrays.'''
 number_videos = c_int()
 number_frames_elements = c_int()
-all_videos_frame_count = POINTER(c_int)()  '''an array to contain the number of frames per video.'''
-all_videos_frame_data = POINTER(c_int)()   '''an array to contain all the frames for all the videos.'''
+all_videos_frame_count = POINTER(c_int)()  '''an array to contain the number of frames for multiple videos.'''
+all_videos_frame_data = POINTER(c_int)()   '''an array to contain all the data frames for multiple videos.'''
 
 '''Step 3: Fetch the data.  Pass them all by reference so that new values can be returned.'''
 lib.vidl_get_all_videos_frames(self.obj, byref(number_videos), byref(all_videos_frame_count), byref(number_frames_elements), byref(all_videos_frame_data))
