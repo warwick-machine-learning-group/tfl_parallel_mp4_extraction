@@ -2,8 +2,8 @@
 
 This folder contains the C++ header and source files, a Linux shell executable and scripts for testing the video extraction library.  Examples of code snippets for calling the routines in the library are provided below.
 
-### An example code snippet in Python
-The code can be found in ```run_4_parallel_video_extraction.py```.
+### A code snippet in Python
+The complete code can be found in ```run_4_parallel_video_extraction.py```.
 
 ```
 import ctypes  
@@ -31,3 +31,34 @@ lib.vidl_get_all_videos_frames(self.obj, byref(number_videos), byref(all_videos_
 lib.vidl_delete(self.obj, all_videos_frame_count, all_videos_frame_data)
 ```  
 Reference: (https://stackoverflow.com/questions/52204971/python-ctypes-pass-argument-by-reference-error)
+
+### A code snippet in C++  
+The complete code can be found in `load_video.cpp`.  
+```
+#include <iostream>
+#include "CommonDataDefs.h"
+#include "video_loader.h"
+
+using namespace CommonDataDefs;
+using namespace std;
+
+IntT main( IntT argc, CharT *argv[] )
+{
+  // ... code for displaying help and reading command line arguments.
+  
+  // Step 1: Create an instance of VideoLoader.
+  VideoLoader video_loader;
+  
+  // Step 2: Create data structures to hold return arrays.
+  IntVectorT videos_frames_count_list;
+  UCharVectorT videos_frames_data;
+  
+  // Step 3: Execute the process.
+  video_loader.run_on_4_processors( arguments.at( 2 ), arguments.at( 3 ) ); // input directory, output directory.
+  
+  // Step 4: Get the data
+  video_loader.get_videos_frames( videos_frames_count_list, videos_frames_data );
+  
+  return 0;
+}
+```
