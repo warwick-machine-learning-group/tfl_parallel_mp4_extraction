@@ -3,7 +3,7 @@
 This folder contains the C++ header and source files, a Linux shell executable and scripts for testing the video extraction library.  Examples of code snippets for calling the routines in the library are provided below.
 
 ### An example code snippet in Python
-The complete code can be found in ```TestStubs/run_4_parallel_video_extraction.py```.
+The code can be found in ```run_4_parallel_video_extraction.py```.
 
 ```
 import ctypes  
