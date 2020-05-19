@@ -96,6 +96,15 @@ public:
 						    CommonDataDefs::UCharT *&videos_frames_data );
 
 	/**
+	 * Method name		: get_videos_frames
+	 * Description		:
+	 * Parameter list	: IntT, UCharT
+	 * Return value		: void
+	 */
+	void get_videos_frames( CommonDataDefs::IntVectorT &videos_frames_count_list,
+							CommonDataDefs::UCharVectorT &videos_frames_data );
+
+	/**
 	 * Method name		: flatten_video_data
 	 * Description		:
 	 * Parameter list	: IntT

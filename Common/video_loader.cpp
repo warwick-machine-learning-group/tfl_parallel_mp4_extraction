@@ -555,6 +555,14 @@ void VideoLoader::get_videos_frames( IntT &number_of_videos,
 } // end get_video_frame()
 
 
+void VideoLoader::get_videos_frames( IntVectorT &videos_frames_count_list,
+									 UCharVectorT &videos_frames_data )
+{
+	videos_frames_count_list.insert( videos_frames_count_list.end(), m_Videos_Frames_Count_List.begin(), m_Videos_Frames_Count_List.end() );
+	videos_frames_data.insert( videos_frames_data.end(), m_Flattened_Video_Data_List.begin(), m_Flattened_Video_Data_List.end() );
+} // end get_videos_frames()
+
+
 /***************************
   PRIVATE MEMBER FUNCTIONS
  ***************************/
